@@ -18,7 +18,7 @@
       <% @available_days.each do |available_day| %>
       <tr>
         <td><%= available_day.date %></td>
-        <td><%= available_day.listing_id %></td>
+        <td><%= available_day.listing.title %></td>
         <td><%= available_day.price %></td>
         <td>
           <a href="/available_days/<%= available_day.id %>" class="btn btn-primary">Show</a>
