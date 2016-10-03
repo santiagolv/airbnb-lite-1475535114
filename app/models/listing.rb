@@ -1,6 +1,9 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  has_many   :messages,
+             :dependent => :destroy
+
   has_many   :user_reviews,
              :dependent => :destroy
 
