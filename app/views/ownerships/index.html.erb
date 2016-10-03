@@ -16,7 +16,7 @@
 
       <% @ownerships.each do |ownership| %>
       <tr>
-        <td><%= ownership.user_id %></td>
+        <td><%= ownership.user.name %></td>
         <td><%= ownership.listing_id %></td>
         <td>
           <a href="/ownerships/<%= ownership.id %>" class="btn btn-primary">Show</a>
