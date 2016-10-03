@@ -1,6 +1,9 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  has_many   :user_reviews,
+             :dependent => :destroy
+
   has_many   :reviews,
              :class_name => "ListingReview",
              :dependent => :destroy
