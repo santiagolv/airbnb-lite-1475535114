@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Available_day resource:
+  # CREATE
+  get "/available_days/new", :controller => "available_days", :action => "new"
+  post "/create_available_day", :controller => "available_days", :action => "create"
+
+  # READ
+  get "/available_days", :controller => "available_days", :action => "index"
+  get "/available_days/:id", :controller => "available_days", :action => "show"
+
+  # UPDATE
+  get "/available_days/:id/edit", :controller => "available_days", :action => "edit"
+  post "/update_available_day/:id", :controller => "available_days", :action => "update"
+
+  # DELETE
+  get "/delete_available_day/:id", :controller => "available_days", :action => "destroy"
+  #------------------------------
+
   # Routes for the Policy resource:
   # CREATE
   get "/policies/new", :controller => "policies", :action => "new"

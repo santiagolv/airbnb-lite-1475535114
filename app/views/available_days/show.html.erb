@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Available Day #<%= @available_day.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Date</dt>
+      <dd><%= @available_day.date %></dd>
+
+      <dt>Listing</dt>
+      <dd><%= @available_day.listing_id %></dd>
+
+      <dt>Price</dt>
+      <dd><%= @available_day.price %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/available_days" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/available_days/<%= @available_day.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_available_day/<%= @available_day.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
