@@ -26,3 +26,23 @@
     </div>
   </div>
 </div>
+
+<!-- A Neighborhood has many listings -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Listings
+      </li>
+
+      <% @neighborhood.listings.each do |listing| %>
+        <li class="list-group-item">
+          <a href="/listings/<%= listing.id %>">
+            <%= listing.title %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

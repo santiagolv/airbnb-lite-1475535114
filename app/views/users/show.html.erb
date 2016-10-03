@@ -26,3 +26,103 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many ownerships -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Ownerships
+      </li>
+
+      <% @user.ownerships.each do |ownership| %>
+        <li class="list-group-item">
+          <a href="/ownerships/<%= ownership.id %>">
+            <%= ownership.user_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many bookmarks -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Bookmarks
+      </li>
+
+      <% @user.bookmarks.each do |bookmark| %>
+        <li class="list-group-item">
+          <a href="/bookmarks/<%= bookmark.id %>">
+            <%= bookmark.user_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @user.reviews.each do |listing_review| %>
+        <li class="list-group-item">
+          <a href="/listing_reviews/<%= listing_review.id %>">
+            <%= listing_review.review_body %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many user_reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        User_reviews
+      </li>
+
+      <% @user.user_reviews.each do |user_review| %>
+        <li class="list-group-item">
+          <a href="/user_reviews/<%= user_review.id %>">
+            <%= user_review.user_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many messages -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Messages
+      </li>
+
+      <% @user.messages.each do |message| %>
+        <li class="list-group-item">
+          <a href="/messages/<%= message.id %>">
+            <%= message.body %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

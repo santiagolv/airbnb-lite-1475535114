@@ -47,3 +47,143 @@
     </div>
   </div>
 </div>
+
+<!-- A Listing has many listing_photos -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Listing_photos
+      </li>
+
+      <% @listing.listing_photos.each do |listing_photo| %>
+        <li class="list-group-item">
+          <a href="/listing_photos/<%= listing_photo.id %>">
+            <%= listing_photo.listing_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Listing has many policies -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Policies
+      </li>
+
+      <% @listing.policies.each do |policy| %>
+        <li class="list-group-item">
+          <a href="/policies/<%= policy.id %>">
+            <%= policy.listing_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Listing has many available_days -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Available_days
+      </li>
+
+      <% @listing.available_days.each do |available_day| %>
+        <li class="list-group-item">
+          <a href="/available_days/<%= available_day.id %>">
+            <%= available_day.date %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Listing has many bookmarks -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Bookmarks
+      </li>
+
+      <% @listing.bookmarks.each do |bookmark| %>
+        <li class="list-group-item">
+          <a href="/bookmarks/<%= bookmark.id %>">
+            <%= bookmark.user_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Listing has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @listing.reviews.each do |listing_review| %>
+        <li class="list-group-item">
+          <a href="/listing_reviews/<%= listing_review.id %>">
+            <%= listing_review.review_body %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Listing has many user_reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        User_reviews
+      </li>
+
+      <% @listing.user_reviews.each do |user_review| %>
+        <li class="list-group-item">
+          <a href="/user_reviews/<%= user_review.id %>">
+            <%= user_review.user_id %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Listing has many messages -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Messages
+      </li>
+
+      <% @listing.messages.each do |message| %>
+        <li class="list-group-item">
+          <a href="/messages/<%= message.id %>">
+            <%= message.body %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
