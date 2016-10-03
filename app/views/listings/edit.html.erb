@@ -1,0 +1,108 @@
+<!-- Validation failure messages -->
+<% if @listing.errors.any? %>
+  <% @listing.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Listing #<%= @listing.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_listing/<%= @listing.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @listing.title %>">
+      </div>
+
+      <!-- Label and input for private_room_entire_apartment -->
+      <div class="checkbox">
+        <label for="private_room_entire_apartment">
+          <input type="checkbox" id="private_room_entire_apartment" name="private_room_entire_apartment" value="1" <%= "checked" if @listing.private_room_entire_apartment %>>
+          Private room entire apartment
+        </label>
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @listing.description %></textarea>
+      </div>
+
+      <!-- Label and input for bedrooms -->
+      <div class="form-group">
+        <label for="bedrooms" class="control-label">
+          Bedrooms
+        </label>
+
+        <input type="text" id="bedrooms" name="bedrooms" placeholder="Bedrooms" class="form-control" value="<%= @listing.bedrooms %>">
+      </div>
+
+      <!-- Label and input for bathrooms -->
+      <div class="form-group">
+        <label for="bathrooms" class="control-label">
+          Bathrooms
+        </label>
+
+        <input type="text" id="bathrooms" name="bathrooms" placeholder="Bathrooms" class="form-control" value="<%= @listing.bathrooms %>">
+      </div>
+
+      <!-- Label and input for beds -->
+      <div class="form-group">
+        <label for="beds" class="control-label">
+          Beds
+        </label>
+
+        <input type="text" id="beds" name="beds" placeholder="Beds" class="form-control" value="<%= @listing.beds %>">
+      </div>
+
+      <!-- Label and input for max_occupants -->
+      <div class="form-group">
+        <label for="max_occupants" class="control-label">
+          Max occupants
+        </label>
+
+        <input type="text" id="max_occupants" name="max_occupants" placeholder="Max occupants" class="form-control" value="<%= @listing.max_occupants %>">
+      </div>
+
+      <!-- Label and input for neighborhood_id -->
+      <div class="form-group">
+        <label for="neighborhood_id" class="control-label">
+          Neighborhood
+        </label>
+
+        <input type="text" id="neighborhood_id" name="neighborhood_id" placeholder="Neighborhood" class="form-control" value="<%= @listing.neighborhood_id %>">
+      </div>
+
+      <!-- Label and input for default_price -->
+      <div class="form-group">
+        <label for="default_price" class="control-label">
+          Default price
+        </label>
+
+        <input type="text" id="default_price" name="default_price" placeholder="Default price" class="form-control" value="<%= @listing.default_price %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Listing
+      </button>
+      or
+      <a href="/listings/<%= @listing.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
