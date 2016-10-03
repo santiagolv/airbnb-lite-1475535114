@@ -1,6 +1,9 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  has_many   :available_days,
+             :dependent => :destroy
+
   has_many   :policies,
              :dependent => :destroy
 
