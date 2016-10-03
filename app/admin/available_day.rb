@@ -1,5 +1,7 @@
 ActiveAdmin.register AvailableDay do
 
+ permit_params :date, :listing_id, :price
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
