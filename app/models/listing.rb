@@ -1,6 +1,8 @@
 class Listing < ApplicationRecord
   # Direct associations
 
+  belongs_to :neighborhood
+
   has_many   :messages,
              :dependent => :destroy
 
