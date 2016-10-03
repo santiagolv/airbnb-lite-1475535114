@@ -1,0 +1,70 @@
+<!-- Validation failure messages -->
+<% if @policy.errors.any? %>
+  <% @policy.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Policy</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_policy" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for listing_id -->
+      <div class="form-group">
+        <label for="listing_id" class="control-label">
+          Listing
+        </label>
+
+        <input type="text" id="listing_id" name="listing_id" placeholder="Listing" class="form-control" value="<%= @policy.listing_id %>">
+      </div>
+
+      <!-- Label and input for checkin_time -->
+      <div class="form-group">
+        <label for="checkin_time" class="control-label">
+          Checkin time
+        </label>
+
+        <input type="text" id="checkin_time" name="checkin_time" placeholder="Checkin time" class="form-control" value="<%= @policy.checkin_time %>">
+      </div>
+
+      <!-- Label and input for smoking -->
+      <div class="checkbox">
+        <label for="smoking">
+          <input type="checkbox" id="smoking" name="smoking" value="1" <%= "checked" if @policy.smoking %>>
+          Smoking
+        </label>
+      </div>
+
+      <!-- Label and input for dogs_allowed -->
+      <div class="checkbox">
+        <label for="dogs_allowed">
+          <input type="checkbox" id="dogs_allowed" name="dogs_allowed" value="1" <%= "checked" if @policy.dogs_allowed %>>
+          Dogs allowed
+        </label>
+      </div>
+
+      <!-- Label and input for cats_allowed -->
+      <div class="checkbox">
+        <label for="cats_allowed">
+          <input type="checkbox" id="cats_allowed" name="cats_allowed" value="1" <%= "checked" if @policy.cats_allowed %>>
+          Cats allowed
+        </label>
+      </div>
+
+      <button class="btn btn-success">
+        Create Policy
+      </button>
+      or
+      <a href="/policies">Cancel</a>
+    </form>
+  </div>
+</div>
