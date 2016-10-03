@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>User Review #<%= @user_review.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>User</dt>
+      <dd><%= @user_review.user_id %></dd>
+
+      <dt>Listing</dt>
+      <dd><%= @user_review.listing_id %></dd>
+
+      <dt>Overall rating</dt>
+      <dd><%= @user_review.overall_rating %></dd>
+
+      <dt>Body</dt>
+      <dd><%= @user_review.body %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/user_reviews" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/user_reviews/<%= @user_review.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_user_review/<%= @user_review.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
